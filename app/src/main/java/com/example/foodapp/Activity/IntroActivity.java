@@ -16,10 +16,6 @@ public class IntroActivity extends AppCompatActivity {
     private ConstraintLayout startBtn;
 
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

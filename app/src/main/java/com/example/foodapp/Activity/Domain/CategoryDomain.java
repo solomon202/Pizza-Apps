@@ -5,6 +5,7 @@ public class CategoryDomain {
     private String title;
     public String pic;
 
+
     public CategoryDomain(String title,String pit){
         this.title = title;
         this.pic = pic;
