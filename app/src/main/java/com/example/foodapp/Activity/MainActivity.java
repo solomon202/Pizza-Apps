@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.foodapp.Activity.Adaptor.CategoryAdaptor;
 import com.example.foodapp.Activity.Domain.CategoryDomain;
 import com.example.foodapp.R;
 
@@ -34,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         category.add(new CategoryDomain("Hotdog","cat_3"));
         category.add(new CategoryDomain("Drink","cat_4"));
         category.add(new CategoryDomain("Donut","cat_5"));
+
+
+        adapter = new CategoryAdaptor(category);
+        recyclerViewCategoryList.setAdapter(adapter);
     }
 
 }

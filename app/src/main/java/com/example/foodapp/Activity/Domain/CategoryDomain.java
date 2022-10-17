@@ -6,7 +6,7 @@ public class CategoryDomain {
     public String pic;
 
 
-    public CategoryDomain(String title,String pit){
+    public CategoryDomain(String title,String pic){
         this.title = title;
         this.pic = pic;
     }
@@ -19,11 +19,11 @@ public class CategoryDomain {
         this.title = title;
     }
 
-    public String getPit() {
+    public String getPic() {
         return pic;
     }
 
-    public void setPit(String pit) {
+    public void setPic(String pic) {
         this.pic = pic;
     }
 }
