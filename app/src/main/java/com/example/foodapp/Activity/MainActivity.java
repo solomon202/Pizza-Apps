@@ -7,14 +7,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.foodapp.Activity.Adaptor.CategoryAdaptor;
+import com.example.foodapp.Activity.Adaptor.PopularAdaptor;
 import com.example.foodapp.Activity.Domain.CategoryDomain;
+import com.example.foodapp.Activity.Domain.FoodDomain;
 import com.example.foodapp.R;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView.Adapter adapter;
-    private RecyclerView recyclerViewCategoryList;
+    private RecyclerView.Adapter adapter,adapter2;
+    private RecyclerView recyclerViewCategoryList,recyclerViewPopularList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,21 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new CategoryAdaptor(category);
         recyclerViewCategoryList.setAdapter(adapter);
+    }
+    private void recyclerViewPopular(){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerViewPopularList = findViewById(R.id.recyclerView2);
+
+        ArrayList<FoodDomain>foodList= new ArrayList<>();
+        foodList.add(new FoodDomain("Pepperoni pizza","pizza1","slices pepperoni,mozzerella cheese,fresh oregano,ground black pepper,pizza sauce",9.76));
+        foodList.add(new FoodDomain("Cheese Burger","burger","beef,Gouda Cheese,Special Sauce,Lettuce,tomato",8.79));
+        foodList.add(new FoodDomain("Vegetable pizza","pizza2","olive oil,Vegetable oil,pitted kalamata,cherry tomatoes,fresh aregano,basil",8.50));
+
+        adapter2=new PopularAdaptor(foodList);
+        recyclerViewPopularList.setAdapter(adapter2);
+
+
+
     }
 
 }
