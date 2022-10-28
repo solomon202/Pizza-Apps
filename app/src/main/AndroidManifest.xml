@@ -20,7 +20,7 @@
             android:name=".ShowDetaliActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.IntroActivity"
+            android:name=".shop.Activity.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.MainActivity"
+            android:name=".shop.Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".Activity.MainActivity" />
