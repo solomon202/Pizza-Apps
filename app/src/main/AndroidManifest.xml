@@ -14,10 +14,7 @@
         android:theme="@style/Theme.FoodApp"
         tools:targetApi="31">
         <activity
-            android:name=".ShowDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ShowDetaliActivity"
+            android:name=".shop.Activity.ShowDetailActivity"
             android:exported="false" />
         <activity
             android:name=".shop.Activity.IntroActivity"

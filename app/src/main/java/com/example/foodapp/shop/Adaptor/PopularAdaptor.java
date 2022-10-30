@@ -30,6 +30,8 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHold
     }
     @Override
     public void onBindViewHolder(@NonNull PopularAdaptor.ViewHolder holder,int position) {
+
+
         holder.title.setText(popularFood.get(position).getTitle());
         holder.fee.setText(String.valueOf(popularFood.get(position).getFee()));
 
@@ -42,7 +44,7 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHold
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
-                intent.putExtra("object", popularFood.get(position));
+                intent.putExtra("object", popularFood.get(position));//holder.getAdapterPosition()
                 holder.itemView.getContext().startActivity(intent);
             }
         });
