@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/drawable/orange_light_banner.xml" value="0.123" />
         <entry key="app/src/main/res/drawable/search_background.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/viewholder_popular.xml" value="0.172" />
+        <entry key="app/src/main/res/layout/activity_cart_list.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_show_detail.xml" value="0.16" />
