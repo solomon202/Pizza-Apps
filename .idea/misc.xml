@@ -19,9 +19,9 @@
         <entry key="app/src/main/res/layout/activity_cart_list.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_show_detail.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/activity_show_detail.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_show_detali.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/viewholder_cart.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/viewholder_cart.xml" value="0.25" />
         <entry key="app/src/main/res/layout/viewholder_catecory.xml" value="0.33" />
         <entry key="app/src/main/res/layout/viewholder_popular.xml" value="0.18" />
       </map>
