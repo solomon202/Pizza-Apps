@@ -2,6 +2,7 @@ package com.example.foodapp.shop.Adaptor;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -10,9 +11,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.foodapp.R;
 import com.example.foodapp.shop.Domain.FoodDomain;
 import com.example.foodapp.shop.Helper.ManagementCart;
 import com.example.foodapp.shop.Interface.ChangeNumberItemListener;
+import com.google.android.material.slider.LabelFormatter;
 
 import java.util.ArrayList;
 
@@ -27,28 +31,80 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
         this.managementCart = managementCart;
         this.changeNumberItemListener = changeNumberItemListener;
     }
-    @NonNull
-    @org.jetbrains.annotations.NotNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
-        return null;
-
+        View inflate= LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_cart,parent,false);
+        return new ViewHolder(inflate);
     }
+
+    @Override
     public void onBindViewHolder(@NonNull  CartListAdapter.ViewHolder holder,int position){
+        holder.title.setText(foodDomains.get(position).getTitle());
+        holder.feeEachItem.setText(String.valueOf(foodDomains.get(position).getFee()));
+        holder.totialEachItem.setText(String.valueOf(Math.round(foodDomains.get(position).getNumberInCart()*foodDomains.get(position).getFee())*100/100));
+
+        int drawableRecurceId=holder.itemView.getContext().getResources().getIdentifier(foodDomains.get(position).getPic(),
+                "drawable",holder.itemView.getContext().getPackageName());
+    }
+
+      Glide.with(holder.itemView.getContext())
+              .load(drawableReourceId)
+              .into(holder.pic);
+
+        holder.plusItem.setOnClickListener(new View.OnClickListener(){
+          @Override
+         public void onClick(View view){
+              managementCart.plusNumberFood(foodDomains,position, new ChangeNumberItemListener() {
+                  @Override
+                  public void changed() {
+                  notifyDataSetChanged();
+                  changeNumberItemListener.changed();
+              }
+
+              });
+        }
+
+        });
+
+        holder.minusItem.setOnClickListener(new View.OnClickListener()
+
+    {
+        @Override
+        public void onClick (View view){
+        managementCart.minusNumberFood(foodDomains, position, new ChangeNumberItemListener() {
+            @Override
+            public void changed() {
+                notifyDataSetChanged();
+                changeNumberItemListener.changed();
+
+            }
+        });
+    }
+    });
 
     }
+
+
     @Override
     public int getItemCount(){
         return foodDomains.size();
     }
-    public class ViewHolder extends RecyclerView.ViewHolder{
+
+    public class ViewHolder extends RecyclerView.ViewHolder  {
         TextView title,feeEachItem;
         ImageView pic,plusItem,minusItem;
         TextView totialEachItem,num;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
-            title = itemView.findViewById()
+            title = itemView.findViewById(R.id.titleTxt);
+            feeEachItem = itemView.findViewById(R.id.feeEachitem);
+            pic = itemView.findViewById(R.id.picCart);
+            totialEachItem = itemView.findViewById(R.id.totalEachitem);
+            num = itemView.findViewById(R.id.numberItemTxt);
+            plusItem = itemView.findViewById(R.id.plusCardBtn);
+            minusItem = itemView.findViewById(R.id.minusBtn);
+
         }
 
     }

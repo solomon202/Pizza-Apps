@@ -3,10 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="10dp"
+    android:elevation="3dp">
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/picCart"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
@@ -19,7 +24,7 @@
         app:srcCompat="@drawable/pop_1" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/titleTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -27,8 +32,8 @@
         android:text="title"
         android:textColor="#373b54"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintBottom_toBottomOf="@+id/picCart"
+        app:layout_constraintStart_toEndOf="@+id/picCart"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -36,8 +41,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintBottom_toBottomOf="@+id/picCart"
+        app:layout_constraintStart_toEndOf="@+id/picCart"
         app:srcCompat="@drawable/minus" />
 
     <TextView
@@ -53,7 +58,7 @@
         app:layout_constraintStart_toEndOf="@+id/minusCartBtn" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/plusCardBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -63,16 +68,16 @@
         app:srcCompat="@drawable/plus" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/feeEachitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="0"
-        android:textSize="16sp"
         android:textColor="#373b54"
-        app:layout_constraintBottom_toBottomOf="@+id/textView13"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/titleTxt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView13" />
+        app:layout_constraintTop_toTopOf="@+id/titleTxt" />
 
     <TextView
         android:id="@+id/textView18"
@@ -81,7 +86,31 @@
         android:layout_marginEnd="4dp"
         android:text="$"
         android:textColor="#ff3d08"
-        app:layout_constraintBottom_toBottomOf="@+id/textView17"
-        app:layout_constraintEnd_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toTopOf="@+id/textView17" />
+        app:layout_constraintBottom_toBottomOf="@+id/feeEachitem"
+        app:layout_constraintEnd_toStartOf="@+id/feeEachitem"
+        app:layout_constraintTop_toTopOf="@+id/feeEachitem" />
+
+    <TextView
+        android:id="@+id/totalEachitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="#373b54"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/plusCardBtn"
+        app:layout_constraintEnd_toEndOf="@+id/feeEachitem"
+        app:layout_constraintTop_toTopOf="@+id/plusCardBtn" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="$"
+        android:textColor="#ff3d00"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/totalEachitem"
+        app:layout_constraintEnd_toStartOf="@+id/totalEachitem"
+        app:layout_constraintTop_toBottomOf="@+id/feeEachitem" />
 </androidx.constraintlayout.widget.ConstraintLayout>
