@@ -55,11 +55,12 @@ public class ManagementCart {
     tinyDB.putListObject("CartList",listfood);
     changeNumberItemListener.changed();
     }
-    public Double getTotalFree(){
-        ArrayList<FoodDomain>listfood = getListCart();
-        double fee =0;
-        for(int i = 0; i< listfood.size();i++){
-            fee = fee+(listfood.get(i).getFee()*listfood.get(i).getNumberInCart());
+    public Double getTotalFree() {
+        ArrayList<FoodDomain> listfood = getListCart();
+        double fee = 0;
+        for (int i = 0; i < listfood.size(); i++) {
+            fee = fee + (listfood.get(i).getFee() * listfood.get(i).getNumberInCart());
         }
+        return fee;
     }
 }
