@@ -175,9 +175,10 @@
         android:textStyle="bold"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/scrollView3"
-        app:layout_constraintTop_toTopOf="@+id/scrollView3" />
+        app:layout_constraintTop_toTopOf="@+id/scrollView3"
+        tools:visibility="gone" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

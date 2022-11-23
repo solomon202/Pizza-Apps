@@ -26,7 +26,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
 
     public CartListAdapter(ArrayList<FoodDomain>foodDomains,Context context,ChangeNumberItemListener changeNumberItemListener){
         this.foodDomains = foodDomains;
-        this.managementCart =new  ManagementCart(context);
+        this.managementCart = new  ManagementCart(context);
         this.changeNumberItemListener = changeNumberItemListener;
     }
     @Override
@@ -42,7 +42,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
         holder.totialEachItem.setText(String.valueOf(Math.round(foodDomains.get(position).getNumberInCart()*foodDomains.get(position).getFee())*100/100));
         holder.num.setText(String.valueOf(foodDomains.get(position).getNumberInCart()));
 
-        int drawableRecurceId=holder.itemView.getContext().getResources().getIdentifier(foodDomains.get(position).getPic(),
+        int drawableReourceId=holder.itemView.getContext().getResources().getIdentifier(foodDomains.get(position).getPic(),
                 "drawable",holder.itemView.getContext().getPackageName());
 
       Glide.with(holder.itemView.getContext())
