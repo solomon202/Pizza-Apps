@@ -36,7 +36,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull  CartListAdapter.ViewHolder holder,int position){
+    public void onBindViewHolder(@NonNull  CartListAdapter.ViewHolder holder,int position) {
         holder.title.setText(foodDomains.get(position).getTitle());
         holder.feeEachItem.setText(String.valueOf(foodDomains.get(position).getFee()));
         holder.totialEachItem.setText(String.valueOf(Math.round(foodDomains.get(position).getNumberInCart()*foodDomains.get(position).getFee())*100/100));
@@ -52,6 +52,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
           holder.plusItem.setOnClickListener(new View.OnClickListener(){
           @Override
          public void onClick(View view){
+
               managementCart.plusNumberFood(foodDomains,position, new ChangeNumberItemListener() {
                   @Override
                   public void changed() {

@@ -16,7 +16,7 @@ public class FoodDomain implements Serializable{
         this.fee = fee;
     }
 
-    public FoodDomain(String title, String pic, String description, Double fee, int numberInCrt) {
+    public FoodDomain(String title, String pic, String description, Double fee, int numberInCart) {
         this.title = title;
         this.pic = pic;
         this.description = description;

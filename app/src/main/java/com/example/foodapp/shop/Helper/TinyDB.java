@@ -334,7 +334,7 @@ public class TinyDB {
         ArrayList<FoodDomain> playerList =  new ArrayList<FoodDomain>();
 
         for(String jObjString : objStrings){
-            FoodDomain player  = gson.fromJson(jObjString,  FoodDomain.class);
+            FoodDomain player  = gson.fromJson(jObjString,FoodDomain.class);
             playerList.add(player);
         }
         return playerList;
